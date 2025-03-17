@@ -1,0 +1,18 @@
+[project]
+name = "media2ascii"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Gustavo Rademacher",email = "gustavo.rademacher@outlook.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "pillow (>=11.1.0,<12.0.0)",
+    "pydub (>=0.25.1,<0.26.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
