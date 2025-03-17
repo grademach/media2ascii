@@ -8,8 +8,8 @@ from get_frame import image_to_ascii
 
 AUDIO = False
 VIDEO_DIR = "./bad_apple.mp4"
-FRAMES_DIR = os.getcwd() + "./frames/"
-TERMINAL_RES = (50, 40)
+FRAMES_DIR = "./frames/"
+TERMINAL_RES = (60, 50)
 
 if not os.path.exists(FRAMES_DIR):
     os.makedirs(FRAMES_DIR)
@@ -26,10 +26,15 @@ def play_audio():
 
 
 total_frames = vid.streams.video[0].frames
-for f in vid.decode(video=0):
-    percentage = round((f.index/total_frames) * 100)
-    os.system(f"title Loading frames - {percentage}%")
-    f.to_image().save(f"./frames/{f.index}.jpg", quality=80)
+
+if not os.path.exists(FRAMES_DIR):
+    os.mkdir(FRAMES_DIR)
+
+for i, f in enumerate(vid.decode(video=0)):
+    percentage = round((i/total_frames) * 100)
+    if (os.name == "nt"):
+        os.system(f"title Loading frames - {percentage}%")
+    f.to_image().save(f"./frames/{i}.jpg", quality=80)
 
 if AUDIO:
     audio_thread = threading.Thread(target=play_audio)
