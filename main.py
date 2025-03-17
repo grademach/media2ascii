@@ -6,7 +6,7 @@ import threading
 from pydub.playback import play
 from get_frame import image_to_ascii
 
-AUDIO = True
+AUDIO = False
 VIDEO_DIR = "./bad_apple.mp4"
 FRAMES_DIR = os.getcwd() + "./frames/"
 TERMINAL_RES = (50, 40)
