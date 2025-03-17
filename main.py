@@ -9,7 +9,7 @@ from get_frame import image_to_ascii
 AUDIO = False
 VIDEO_DIR = "./bad_apple.mp4"
 FRAMES_DIR = "./frames/"
-TERMINAL_RES = (60, 50)
+TERMINAL_RES = (48, 36)
 
 if not os.path.exists(FRAMES_DIR):
     os.makedirs(FRAMES_DIR)
