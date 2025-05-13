@@ -2,3 +2,4 @@ __pycache__/
 .venv/
 frames/
 image.txt
+informacion_confidencial.txt
